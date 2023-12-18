@@ -5,7 +5,7 @@
 
 ## 
 
-BB3110 Computational Python
+Computational Python
 KTH
 
 ---
