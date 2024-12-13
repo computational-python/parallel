@@ -3,11 +3,12 @@
   <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style type="text/css">
-      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
-      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
       body {
         font-family: 'Droid Serif';
@@ -122,6 +123,7 @@
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
   <body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
@@ -130,6 +132,16 @@
     <script>
         
     </script>
+    <style>
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<link rel="stylesheet" href="/parallel/refreeze/js/highlight/styles/gruvbox-light.css">
+<script src="/parallel/refreeze/js/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
     <textarea id="source">
 name: inverse
 layout: true
@@ -137,9 +149,9 @@ class: center, middle, inverse
 
 ---
 
-&lt;script type=&#34;text/javascript&#34;
-  src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt;
-&lt;/script&gt;
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 # Parallel calculations
 
 ## 
@@ -148,6 +160,7 @@ Computational Python
 KTH
 
 ---
+layout: false
 
 layout: false
 
@@ -172,7 +185,7 @@ layout: false
 
 ## Threads
 
-* Like process, but more &#34;lightweight&#34;
+* Like process, but more "lightweight"
 * Independent control flow
 * Threads in a process share data and system resources
 * Python Global Interpreter Lock (GIL) prevents thread concurrency
@@ -185,9 +198,9 @@ layout: false
 
 ~~~
 #!/usr/bin/env python
-&#34;&#34;&#34;
+"""
 Parallel Hello World
-&#34;&#34;&#34;
+"""
 
 from mpi4py import MPI
 import sys
@@ -197,7 +210,7 @@ rank = MPI.COMM_WORLD.Get_rank()
 name = MPI.Get_processor_name()
 
 sys.stdout.write(
-    &#34;Hello, World! I am process %d of %d on %s.\n&#34;
+    "Hello, World! I am process %d of %d on %s.\n"
     % (rank, size, name))
 ~~~
 ---
@@ -250,9 +263,10 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
     <script src="/parallel/refreeze/js/high.js" type="text/javascript"></script>
     <script type="text/javascript">
       var slideshow = remark.create({
-          highlightStyle: 'sunburst',
+          highlightStyle: 'gmd',
           highlightLanguage: 'remark'
         }) ;
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
